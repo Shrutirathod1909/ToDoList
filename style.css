@@ -1,0 +1,142 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: rgb(234, 213, 175);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.todo-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Input section */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 0;
+}
+
+.input-section button {
+  padding: 10px 20px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+.input-section button:hover {
+  background: #45a049;
+}
+
+/* Task list */
+ul#taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  background: #d1ffd1;
+}
+
+/* Task structure */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-header input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.task-header input[type="text"]:disabled {
+  color: #333;
+}
+
+/* Footer */
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 8px;
+  color: #666;
+}
+
+/* Action buttons */
+.task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .input-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-section input,
+  .input-section button {
+    width: 100%;
+  }
+
+  .task-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .task-header input[type="text"] {
+    margin-right: 0;
+  }
+
+  .task-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
